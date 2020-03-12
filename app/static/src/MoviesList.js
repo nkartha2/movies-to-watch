@@ -102,7 +102,6 @@ export default class MoviesList extends React.Component {
   }
 
   genArtist = artist => {
-    // console.log("PRINT ", artist)
     return (
       <li key={artist}>
         {artist}
