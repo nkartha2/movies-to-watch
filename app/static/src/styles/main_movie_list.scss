@@ -1,0 +1,24 @@
+.movie-list {
+  width: 500px;
+  margin: 0 auto;
+  ol, ul {
+    text-align: left;
+  }
+  ol {
+    counter-reset: movie-counter;
+    list-style: none;
+    li {
+      counter-increment: movie-counter;
+    }
+    li::before {
+      // to use a css counter, it first must
+      // be reset with counter-reset
+      content: "0" counter(movie-counter);
+      font-weight: bold;
+      font-size: 3rem;
+      margin-right: 0.5rem;
+      // font-family: 'Abril Fatface', serif;
+      line-height: 1;
+    }
+  }
+}

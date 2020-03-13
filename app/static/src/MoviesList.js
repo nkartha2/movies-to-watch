@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/main_movie_list.scss';
 
 const moviesData = [
   {

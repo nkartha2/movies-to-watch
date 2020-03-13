@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <MoviesList />
       <AddDirector />
       <AddMovie />
-      <MoviesList />
     </div>
   );
 }

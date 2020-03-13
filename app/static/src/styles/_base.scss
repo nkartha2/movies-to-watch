@@ -1,3 +1,21 @@
-header {
+body {
+  background-color: #fbfbfb;
   font-family: 'Bellota Text', cursive;
+}
+
+header {
+  h1 {
+    font-family: 'Bellota Text', cursive;
+    text-align: left;
+    padding: 0px 10px;
+    font-size: 50px;
+    margin: 10px 0px;
+  }
+  .header-line {
+    height: 5px;
+    width: 250px;
+    background-color: #000;
+    text-align: right;
+    margin-left: 180px;
+  }
 }
