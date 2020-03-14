@@ -105,7 +105,7 @@ export default class MoviesList extends React.Component {
   genArtist = artist => {
     return (
       <li key={artist}>
-        {artist}
+        -{artist}
       </li>
     );
   }
@@ -116,6 +116,7 @@ export default class MoviesList extends React.Component {
         <li key={movieTitle}>
           {movieTitle}
           <ul>
+            <h5>Recommended by</h5>
             {currMovieArtists.length > 0 && currMovieArtists.map(artist => {
               return this.genArtist(artist)
             })}

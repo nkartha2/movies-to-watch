@@ -9,9 +9,10 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <img src="./collage.jpg"/>
       <MoviesList />
-      <AddDirector />
-      <AddMovie />
+      {/* <AddDirector /> */}
+      {/* <AddMovie /> */}
     </div>
   );
 }

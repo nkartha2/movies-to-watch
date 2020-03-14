@@ -1,24 +1,45 @@
+@import './consts';
+
 .movie-list {
   width: 500px;
-  margin: 0 auto;
+  margin: 20px auto;
+  margin-left: 50%;
   ol, ul {
     text-align: left;
   }
   ol {
+    // to use a css counter, it first must
+    // be reset with counter-reset
     counter-reset: movie-counter;
     list-style: none;
-    li {
+    > li {
+      // will increment by one
       counter-increment: movie-counter;
+      font-weight: 700;
+      margin: 15px 0px;
+      &::before {
+        content: "0" counter(movie-counter);
+        text-decoration: underline $colonelmustard;
+        font-weight: bold;
+        font-size: 3rem;
+        margin-right: 0.5rem;
+        line-height: 1;
+      }
     }
-    li::before {
-      // to use a css counter, it first must
-      // be reset with counter-reset
-      content: "0" counter(movie-counter);
-      font-weight: bold;
-      font-size: 3rem;
-      margin-right: 0.5rem;
-      // font-family: 'Abril Fatface', serif;
-      line-height: 1;
+  }
+  ul {
+    list-style-type: none;
+    font-weight: 400;
+    h5 {
+      margin: 5px 0px;
+    }
+    > li {
+      &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #000;
+      }
     }
   }
 }
