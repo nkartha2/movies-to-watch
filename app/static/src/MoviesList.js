@@ -1,6 +1,9 @@
 import React from 'react';
 import './styles/main_movie_list.scss';
 
+// add to db
+// index in db
+
 const moviesData = [
   {
     id: 12,

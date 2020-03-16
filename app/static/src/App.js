@@ -9,8 +9,11 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <img src="./collage.jpg"/>
-      <MoviesList />
+      <div className="app-body">
+        <img src="./collage.jpg"/>
+        <MoviesList />
+      </div>
+      {/* if admin */}
       {/* <AddDirector /> */}
       {/* <AddMovie /> */}
     </div>
