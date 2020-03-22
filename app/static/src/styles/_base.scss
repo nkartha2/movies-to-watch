@@ -1,3 +1,5 @@
+@import './consts';
+
 body {
   background-color: #fbfbfb;
   font-family: 'Bellota Text', cursive;
@@ -6,10 +8,16 @@ body {
 .app-body {
   display: flex;
   justify-content: space-between;
+  @include phone-screen {
+    display: block;
+  }
 }
 
 img {
   width: 40%;
+  @include phone-screen {
+    width: 100%;
+  }
 }
 
 h5 {
