@@ -1,9 +1,6 @@
 import React from 'react';
 import './styles/main_movie_list.scss';
 
-// add to db
-// index in db
-
 const moviesData = [
   {
     id: 12,
@@ -131,11 +128,20 @@ export default class MoviesList extends React.Component {
   render() {
     return(
       <div className="movie-list">
+        <h1>Movies to Watch</h1>
         <ol>
           {this.state.sortedMovies.length > 0 && this.state.sortedMovies.map(movieTitle => {
             return this.genMovie(movieTitle)
           })}
         </ol>
+        <div className="pagination">
+        <h5>next</h5>
+          <div className="rectangle"></div>
+          <div className="next-arrow"></div>
+          <h5>prev</h5>
+          <div className="prev-arrow"></div>
+          <div className="rectangle"></div>
+        </div>
       </div>
     )
   }

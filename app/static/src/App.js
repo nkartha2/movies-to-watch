@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Nav />
       <div className="app-body">
-        <img src="./collage.jpg"/>
+        {/* <img src="./collage.jpg"/> */}
         <MoviesList />
       </div>
       {/* if admin */}

@@ -1,14 +1,29 @@
 @import './consts';
 
 .movie-list {
-  margin: 20px auto;
-  border-top: 5px solid #000;
+  margin: 35px auto 10px;
+  background-color: #fff;
+  padding: 10px 100px;
+  width: 400px;
+  position: relative;
+  h1 {
+    text-transform: uppercase;
+    margin: 5px 0px 0px;
+    font-weight: 700;
+    font-size: 48px;
+    position: absolute;
+    text-transform: uppercase;
+    left: -165px;
+    top: 230px;
+    transform: rotate(90deg);
+  }
   ol, ul {
     text-align: left;
   }
   ol {
     // to use a css counter, it first must
     // be reset with counter-reset
+    border-left: 1px solid #000;
     counter-reset: movie-counter;
     list-style: none;
     > li {
@@ -39,6 +54,38 @@
         height: 5px;
         background-color: #000;
       }
+    }
+  }
+  .pagination {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    .rectangle {
+      width: 20px;
+      height: 2px;
+      background-color: $colonelmustard;
+      display: inline-block;
+      position: relative;
+      top: -2px;
+    }
+    .next-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 3px solid transparent;
+      border-left: 6px solid $colonelmustard;
+      border-bottom: 3px solid transparent;
+    }
+    .prev-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 3px solid transparent;
+      border-right: 6px solid $colonelmustard;
+      border-bottom: 3px solid transparent;
     }
   }
 }

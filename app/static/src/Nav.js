@@ -5,7 +5,6 @@ export default function Nav() {
 
   return (
     <header>
-      <h1>Movies to Watch</h1>
     </header>
   )
 }
