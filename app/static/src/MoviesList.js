@@ -39,22 +39,27 @@ const recommendationsData = [
     id: 4,
     artistId: 1,
     movieId: 12,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }, {
     id: 5,
     artistId: 1,
-    movieId: 23
+    movieId: 23,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }, {
     id: 6,
     artistId: 1,
-    movieId: 34
+    movieId: 34,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }, {
     id: 7,
     artistId: 1,
-    movieId: 45
+    movieId: 45,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }, {
     id: 8,
     artistId: 2,
-    movieId: 45
+    movieId: 45,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }, {
     id: 9,
     artistId: 3,
@@ -72,10 +77,10 @@ function getMovieToArtistCounts(recommendationsData) {
     const currArtist = artistsData.find(artist => artist.id === currArtistId);
     const currMovie = moviesData.find(movie => movie.id === currMovieId);
     if(movieScores[currMovie.movieTitle]) {
-      movieScores[currMovie.movieTitle].push(currArtist.name)
+      movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
     } else {
       movieScores[currMovie.movieTitle] = [];
-      movieScores[currMovie.movieTitle].push(currArtist.name)
+      movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
     }
     return movieScores;
   })
@@ -104,8 +109,15 @@ export default class MoviesList extends React.Component {
 
   genArtist = artist => {
     return (
-      <li key={artist}>
-        -{artist}
+      <li key={artist.artistName}>
+        -{artist.artistName}
+        <a
+          href={artist.cite}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          source
+        </a>
       </li>
     );
   }
@@ -135,7 +147,7 @@ export default class MoviesList extends React.Component {
           })}
         </ol>
         <div className="pagination">
-        <h5>next</h5>
+          <h5>next</h5>
           <div className="rectangle"></div>
           <div className="next-arrow"></div>
           <h5>prev</h5>

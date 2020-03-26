@@ -3,9 +3,10 @@
 .movie-list {
   margin: 35px auto 10px;
   background-color: #fff;
-  padding: 10px 100px;
-  width: 400px;
+  padding: 10px 15px 10px 100px;
+  width: 450px;
   position: relative;
+  display: flex;
   h1 {
     text-transform: uppercase;
     margin: 5px 0px 0px;
@@ -20,7 +21,17 @@
   ol, ul {
     text-align: left;
   }
+  li {
+    list-style: none;
+  }
+  ul {
+    a {
+      font-size: 8px;
+      color: #000;
+    }
+  }
   ol {
+    flex-grow: 2;
     // to use a css counter, it first must
     // be reset with counter-reset
     border-left: 1px solid #000;
@@ -57,9 +68,8 @@
     }
   }
   .pagination {
-    position: absolute;
-    right: 20px;
-    top: 50%;
+    flex-grow: 1;
+    align-self: center;
     font-weight: 700;
     font-size: 12px;
     text-transform: uppercase;
