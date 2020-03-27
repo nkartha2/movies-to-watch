@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/main_movie_list.scss';
+import ArtistList from './ArtistList';
 
 const moviesData = [
   {
@@ -107,21 +108,6 @@ export default class MoviesList extends React.Component {
     }
   }
 
-  genArtist = artist => {
-    return (
-      <li key={artist.artistName}>
-        -{artist.artistName}
-        <a
-          href={artist.cite}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          source
-        </a>
-      </li>
-    );
-  }
-
   genMovie = movieTitle => {
     const currMovieArtists = this.state.movieToArtistCounts[movieTitle];
     return (
@@ -129,9 +115,7 @@ export default class MoviesList extends React.Component {
           {movieTitle}
           <ul>
             <h5>Recommended by</h5>
-            {currMovieArtists.length > 0 && currMovieArtists.map(artist => {
-              return this.genArtist(artist)
-            })}
+            <ArtistList artists={currMovieArtists}/>
           </ul>
         </li>
     );
