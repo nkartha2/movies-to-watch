@@ -8,10 +8,16 @@ function ArtistList(props) {
   const genArtist = (artist) => {
     return (
       <li
-        onClick={() => setActiveSource(artist.artistName)}
+        onClick={() => {
+          if(activeSource === artist.artistName) {
+            setActiveSource('')
+          } else {
+            setActiveSource(artist.artistName)
+          }
+        }}
         key={artist.artistName}
       >
-        <div className="see-source-arrow"></div>
+        <div className={`see-source-arrow ${activeSource === artist.artistName ? 'active' : ''}`}></div>
         {artist.artistName}
         {activeSource === artist.artistName &&
           <a
@@ -19,7 +25,7 @@ function ArtistList(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            source
+            {artist.cite}
           </a>
         }
       </li>
@@ -28,6 +34,7 @@ function ArtistList(props) {
 
   return (
     <ul>
+      <h5>Recommended by</h5>
       {artists.length > 0 && artists.map(artist => {
         return genArtist(artist)
       })}

@@ -1,21 +1,21 @@
 @import './consts';
 
 .movie-list {
-  margin: 35px auto 10px;
+  margin: 0px auto 0px;
   background-color: #fff;
   padding: 10px 15px 10px 100px;
   width: 450px;
   position: relative;
   display: flex;
+  min-height: 100vh;
   h1 {
-    text-transform: uppercase;
     margin: 5px 0px 0px;
-    font-weight: 700;
-    font-size: 48px;
+    font-weight: 400;
+    font-size: 45px;
     position: absolute;
     text-transform: uppercase;
-    left: -165px;
-    top: 230px;
+    left: -155px;
+    top: 220px;
     transform: rotate(90deg);
   }
   ol, ul {
@@ -23,12 +23,6 @@
   }
   li {
     list-style: none;
-  }
-  ul {
-    a {
-      font-size: 8px;
-      color: #000;
-    }
   }
   ol {
     flex-grow: 2;
@@ -38,6 +32,8 @@
     counter-reset: movie-counter;
     list-style: none;
     > li {
+      text-transform: uppercase;
+      font-size: 12px;
       // will increment by one
       counter-increment: movie-counter;
       font-weight: 700;
@@ -45,7 +41,8 @@
       &::before {
         content: "0" counter(movie-counter);
         text-decoration: underline $colonelmustard;
-        font-weight: bold;
+        font-weight: 400;
+        font-family: 'Abril Fatface', sans-serif;
         font-size: 3rem;
         margin-right: 0.5rem;
         line-height: 1;
@@ -55,8 +52,17 @@
   ul {
     list-style-type: none;
     font-weight: 400;
+    padding: 10px 0px 0px 60px;
+    a {
+      color: #000;
+      display: block;
+      font-size: 9px;
+    }
     h5 {
       margin: 5px 0px;
+    }
+    li {
+      text-transform: capitalize;
     }
     > li {
       &::before {
@@ -76,35 +82,9 @@
     border-left: 6px solid #000;
     border-bottom: 3px solid transparent;
   }
-  .pagination {
-    flex-grow: 1;
-    align-self: center;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    .rectangle {
-      width: 20px;
-      height: 2px;
-      background-color: $colonelmustard;
-      display: inline-block;
-      position: relative;
-      top: -2px;
-    }
-    .next-arrow {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-top: 3px solid transparent;
-      border-left: 6px solid $colonelmustard;
-      border-bottom: 3px solid transparent;
-    }
-    .prev-arrow {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-top: 3px solid transparent;
-      border-right: 6px solid $colonelmustard;
-      border-bottom: 3px solid transparent;
-    }
+  .see-source-arrow.active {
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-top: 6px solid #000;
   }
 }

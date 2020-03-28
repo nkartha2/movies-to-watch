@@ -113,10 +113,7 @@ export default class MoviesList extends React.Component {
     return (
         <li key={movieTitle}>
           {movieTitle}
-          <ul>
-            <h5>Recommended by</h5>
-            <ArtistList artists={currMovieArtists}/>
-          </ul>
+          <ArtistList artists={currMovieArtists}/>
         </li>
     );
   }
