@@ -35,12 +35,25 @@ const artistsData = [
   }
 ];
 
+const source = [
+  {
+    id: 1,
+    source_link: "https://nofilmschool.com/bill-hader-best-movies-list",
+    source: "No Film School"
+  },
+  {
+    id: 2,
+    source_link: "https://www.criterion.com/current/top-10-lists/212-bong-joon-ho-s-top-10",
+    source: "Criterion Collection"
+  }
+];
+
 const recommendationsData = [
   {
     id: 4,
     artistId: 1,
     movieId: 12,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+    source_ids: [ 1, 2 ]
   }, {
     id: 5,
     artistId: 1,

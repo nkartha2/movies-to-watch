@@ -21,6 +21,7 @@ function ArtistList(props) {
         {artist.artistName}
         {activeSource === artist.artistName &&
           <a
+            className="active-source"
             href={artist.cite}
             target="_blank"
             rel="noopener noreferrer"
