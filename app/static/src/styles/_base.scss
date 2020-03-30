@@ -3,6 +3,9 @@
 body {
   background-color: #fbfbfb;
   background: url('../images/collage.jpg') repeat center center;
+  @include phone-screen {
+    background: none;
+  }
 }
 
 .app-body {

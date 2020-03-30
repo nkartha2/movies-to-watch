@@ -7,7 +7,10 @@
   width: 450px;
   position: relative;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  @include phone-screen {
+    display: block;
+  }
   h1 {
     margin: 5px 0px 0px;
     font-weight: 400;
@@ -25,7 +28,6 @@
     list-style: none;
   }
   ol {
-    padding-top: 15%;
     // to use a css counter, it first must
     // be reset with counter-reset
     border-left: 1px solid #000;
@@ -100,6 +102,9 @@
     top: 40%;
     right: 35px;
     z-index: 20;
+    @include phone-screen {
+      position: relative;
+    }
     .rectangle {
       width: 20px;
       height: 2px;

@@ -19,6 +19,10 @@ const moviesData = [
     id: 45,
     movieTitle: "Deliverance",
     movieDirector: "John Boorman"
+  }, {
+    id: 50,
+    movieTitle: "Grand Budapest Hotel",
+    movieDirector: "Wes Anderson"
   }
 ];
 
@@ -32,6 +36,9 @@ const artistsData = [
   }, {
     id: 3,
     name: "Bill Hader"
+  }, {
+    id: 4,
+    name: "Tilda Swinton"
   }
 ];
 
@@ -78,6 +85,11 @@ const recommendationsData = [
     id: 9,
     artistId: 3,
     movieId: 34,
+    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+  }, {
+    id: 10,
+    artistId: 4,
+    movieId: 50,
     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }
 ];
@@ -141,12 +153,12 @@ export default class MoviesList extends React.Component {
           })}
         </ol>
         <div className="pagination">
-          <h5>next</h5>
-          <div className="rectangle"></div>
-          <div className="next-arrow"></div>
           <h5>prev</h5>
           <div className="prev-arrow"></div>
           <div className="rectangle"></div>
+          <h5>next</h5>
+          <div className="rectangle"></div>
+          <div className="next-arrow"></div>
         </div>
       </div>
     )
