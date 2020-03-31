@@ -86,12 +86,13 @@ const recommendationsData = [
     artistId: 3,
     movieId: 34,
     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }, {
-    id: 10,
-    artistId: 4,
-    movieId: 50,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
   }
+  // , {
+  //   id: 10,
+  //   artistId: 4,
+  //   movieId: 50,
+  //   cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+  // }
 ];
 
 function getMovieToArtistCounts(recommendationsData) {
@@ -137,7 +138,7 @@ export default class MoviesList extends React.Component {
     const currMovieArtists = this.state.movieToArtistCounts[movieTitle];
     return (
         <li key={movieTitle}>
-          {movieTitle}
+          <h3>{movieTitle}</h3>
           <ArtistList artists={currMovieArtists}/>
         </li>
     );
