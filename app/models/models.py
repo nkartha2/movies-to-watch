@@ -18,7 +18,13 @@ class Artist(Model):
   id = Column(Integer, primary_key=True)
   name = Column(String)
 
+class Source(Model):
+  id = Column(Integer, primary_key=True)
+  source_link = Column(String)
+  source = Column(String)
+
 class Recommendation(Table):
   id = Column(Integer, primary_key=True)
   artist_id = Column(Integer, ForeignKey('artist.id'), primary_key=True)
   movie_id = Column(Integer, ForeignKey('movie.id'), primary_key=True)
+  source_id = Column(Integer, ForeignKey('source.id'), primary_key=True)
