@@ -1,11 +1,8 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Model, Table, Integer, String, Column, Boolean, DateTime, ForeignKey
+from flask_sqlalchemy import Model, SQLAlchemy
+from sqlalchemy import Table, Integer, String, Column, Boolean, DateTime, ForeignKey
 import datetime
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
-db = SQLAlchemy(app)
 
 class Movie(Model):
   id = Column(Integer, primary_key=True)

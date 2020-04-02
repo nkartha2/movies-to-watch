@@ -1,5 +1,3 @@
 # Enables development environment
 DEBUG = True
-
-import os
-BASE_DIR = os.path.abspath()
+DATABASE_URI = 'postgres+psycopg2://postgres:postgres@127.0.0.1:5433/movies_to_watch'
