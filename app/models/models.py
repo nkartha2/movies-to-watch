@@ -18,7 +18,7 @@ class Artist(Model):
 class Source(Model):
   id = Column(Integer, primary_key=True)
   source_link = Column(String)
-  source = Column(String)
+  source_short_name = Column(String)
 
 class Recommendation(Table):
   id = Column(Integer, primary_key=True)

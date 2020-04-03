@@ -1,4 +1,5 @@
-from app import app
+from app import create_app
+app = create_app()
 
 # https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
 if __name__ == "__main__":
