@@ -1,30 +1,30 @@
 import React from 'react';
 
-export default class DirectorForm extends React.Component {
+export default class ArtistForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      director: "",
-      directorToAdd: ""
+      artist: "",
+      artistToAdd: ""
     };
   }
 
-  onChange = (directorValue) => {
-    this.setState({directorToAdd: directorValue})
+  onChange = (artistValue) => {
+    this.setState({artistToAdd: artistValue})
   }
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.setState({director: this.state.directorToAdd})
+    this.setState({artist: this.state.artistToAdd})
   }
 
   render() {
     return (
       <form onSubmit={(e) => {this.onSubmit(e)}}>
         <label>
-          Director
+          Artist
           <input
-            value={this.state.directorToAdd}
+            value={this.state.artistToAdd}
             onChange={(e) => this.onChange(e.currentTarget.value)}
           />
         </label>
