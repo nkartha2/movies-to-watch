@@ -1,7 +1,7 @@
 import React from 'react';
 import MoviesList from './MoviesList';
 import './styles/_base.scss';
-import AdminForm from './AdminForm';
+// import AdminForm from './AdminForm';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <MoviesList />
       </div>
       {/* if admin */}
-      <AdminForm/>
+      {/* <AdminForm/> */}
     </div>
   );
 }
