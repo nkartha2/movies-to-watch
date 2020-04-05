@@ -2,135 +2,153 @@ import React from 'react';
 import './styles/main_movie_list.scss';
 import ArtistList from './ArtistList';
 
-const moviesData = [
-  {
-    id: 12,
-    movieTitle: "The 400 Blows",
-    movieDirector: "Kim Ki-young"
-  }, {
-    id: 23,
-    movieTitle: "The Ballad of Narayama",
-    movieDirector: "Keisuke Kinoshita"
-  }, {
-    id: 34,
-    movieTitle: "Being John Malkovich",
-    movieDirector: "Spike Jonze"
-  }, {
-    id: 45,
-    movieTitle: "Deliverance",
-    movieDirector: "John Boorman"
-  }, {
-    id: 50,
-    movieTitle: "Grand Budapest Hotel",
-    movieDirector: "Wes Anderson"
-  }
-];
+// const moviesData = [
+//   {
+//     id: 12,
+//     movieTitle: "The 400 Blows",
+//     movieDirector: "Kim Ki-young"
+//   }, {
+//     id: 23,
+//     movieTitle: "The Ballad of Narayama",
+//     movieDirector: "Keisuke Kinoshita"
+//   }, {
+//     id: 34,
+//     movieTitle: "Being John Malkovich",
+//     movieDirector: "Spike Jonze"
+//   }, {
+//     id: 45,
+//     movieTitle: "Deliverance",
+//     movieDirector: "John Boorman"
+//   }, {
+//     id: 50,
+//     movieTitle: "Grand Budapest Hotel",
+//     movieDirector: "Wes Anderson"
+//   }
+// ];
 
-const artistsData = [
-  {
-    id: 1,
-    name: "Bong Joon Ho"
-  }, {
-    id: 2,
-    name: "Stanley Kubrick"
-  }, {
-    id: 3,
-    name: "Bill Hader"
-  }, {
-    id: 4,
-    name: "Tilda Swinton"
-  }
-];
+// const artistsData = [
+//   {
+//     id: 1,
+//     name: "Bong Joon Ho"
+//   }, {
+//     id: 2,
+//     name: "Stanley Kubrick"
+//   }, {
+//     id: 3,
+//     name: "Bill Hader"
+//   }, {
+//     id: 4,
+//     name: "Tilda Swinton"
+//   }
+// ];
 
-const source = [
-  {
-    id: 1,
-    source_link: "https://nofilmschool.com/bill-hader-best-movies-list",
-    source: "No Film School"
-  },
-  {
-    id: 2,
-    source_link: "https://www.criterion.com/current/top-10-lists/212-bong-joon-ho-s-top-10",
-    source: "Criterion Collection"
-  }
-];
+// const source = [
+//   {
+//     id: 1,
+//     source_link: "https://nofilmschool.com/bill-hader-best-movies-list",
+//     source: "No Film School"
+//   },
+//   {
+//     id: 2,
+//     source_link: "https://www.criterion.com/current/top-10-lists/212-bong-joon-ho-s-top-10",
+//     source: "Criterion Collection"
+//   }
+// ];
 
-const recommendationsData = [
-  {
-    id: 4,
-    artistId: 1,
-    movieId: 12,
-    source_ids: [ 1, 2 ]
-  }, {
-    id: 5,
-    artistId: 1,
-    movieId: 23,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }, {
-    id: 6,
-    artistId: 1,
-    movieId: 34,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }, {
-    id: 7,
-    artistId: 1,
-    movieId: 45,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }, {
-    id: 8,
-    artistId: 2,
-    movieId: 45,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }, {
-    id: 9,
-    artistId: 3,
-    movieId: 34,
-    cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  }
-  // , {
-  //   id: 10,
-  //   artistId: 4,
-  //   movieId: 50,
-  //   cite: "https://nofilmschool.com/bill-hader-best-movies-list"
-  // }
-];
+// const recommendationsData = [
+//   {
+//     id: 4,
+//     artistId: 1,
+//     movieId: 12,
+//     source_ids: [ 1, 2 ]
+//   }, {
+//     id: 5,
+//     artistId: 1,
+//     movieId: 23,
+//     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   }, {
+//     id: 6,
+//     artistId: 1,
+//     movieId: 34,
+//     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   }, {
+//     id: 7,
+//     artistId: 1,
+//     movieId: 45,
+//     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   }, {
+//     id: 8,
+//     artistId: 2,
+//     movieId: 45,
+//     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   }, {
+//     id: 9,
+//     artistId: 3,
+//     movieId: 34,
+//     cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   }
+//   // , {
+//   //   id: 10,
+//   //   artistId: 4,
+//   //   movieId: 50,
+//   //   cite: "https://nofilmschool.com/bill-hader-best-movies-list"
+//   // }
+// ];
 
-function getMovieToArtistCounts(recommendationsData) {
-  const movieScores = {};
+// function getMovieToArtistCounts(recommendationsData) {
+//   const movieScores = {};
 
-  recommendationsData.map(recommendation => {
-    const currMovieId = recommendation.movieId;
-    const currArtistId = recommendation.artistId;
-    const currArtist = artistsData.find(artist => artist.id === currArtistId);
-    const currMovie = moviesData.find(movie => movie.id === currMovieId);
-    if(movieScores[currMovie.movieTitle]) {
-      movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
-    } else {
-      movieScores[currMovie.movieTitle] = [];
-      movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
-    }
-    return movieScores;
-  })
-  return movieScores
-};
+//   recommendationsData.map(recommendation => {
+//     const currMovieId = recommendation.movieId;
+//     const currArtistId = recommendation.artistId;
+//     const currArtist = artistsData.find(artist => artist.id === currArtistId);
+//     const currMovie = moviesData.find(movie => movie.id === currMovieId);
+//     if(movieScores[currMovie.movieTitle]) {
+//       movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
+//     } else {
+//       movieScores[currMovie.movieTitle] = [];
+//       movieScores[currMovie.movieTitle].push({artistName: currArtist.name, cite: recommendation.cite})
+//     }
+//     return movieScores;
+//   })
+//   return movieScores
+// };
 
-const movieArtistsCountsData = getMovieToArtistCounts(recommendationsData);
+// const movieArtistsCountsData = getMovieToArtistCounts(recommendationsData);
 
-function sortMoviesList(movieArtistsCountsData) {
-  const movieTitles = Object.keys(movieArtistsCountsData);
-  movieTitles.sort((titleA, titleB) => { return movieArtistsCountsData[titleB].length -  movieArtistsCountsData[titleA].length});
-  return movieTitles
-}
+// function sortMoviesList(movieArtistsCountsData) {
+//   const movieTitles = Object.keys(movieArtistsCountsData);
+//   movieTitles.sort((titleA, titleB) => { return movieArtistsCountsData[titleB].length -  movieArtistsCountsData[titleA].length});
+//   return movieTitles
+// }
 
-const sortedMovies = sortMoviesList(movieArtistsCountsData);
+// const sortedMovies = sortMoviesList(movieArtistsCountsData);
 
 export default class MoviesList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortedMovies: sortedMovies,
-      movieToArtistCounts: movieArtistsCountsData,
-      favoriteMoviesPerArtist: recommendationsData
+      movieList: []
+    }
+  }
+
+  componentDidMount(){
+    try {
+      fetch(
+        "http://localhost:5000/api/v1/recommendations",
+        {
+          method: "GET",
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+          },
+        }
+      )
+    } catch(e) {
+      console.error()
     }
   }
 
@@ -149,7 +167,7 @@ export default class MoviesList extends React.Component {
       <div className="movie-list">
         <h1>Movies to Watch</h1>
         <ol>
-          {this.state.sortedMovies.length > 0 && this.state.sortedMovies.map(movieTitle => {
+          {this.state.movieList.length > 0 && this.state.movieList.map(movieTitle => {
             return this.genMovie(movieTitle)
           })}
         </ol>
