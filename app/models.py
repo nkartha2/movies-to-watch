@@ -2,6 +2,7 @@ from flask import Flask
 
 from flask_sqlalchemy import Model, SQLAlchemy
 from sqlalchemy import Table, Integer, String, Column, Boolean, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from app import db
@@ -31,5 +32,8 @@ class Source(db.Model):
 class Recommendation(db.Model):
   id = Column(Integer, primary_key=True)
   artist_id = Column(Integer, ForeignKey('artist.id'), primary_key=True)
+  artist = relationship("Artist", uselist=False)
   movie_id = Column(Integer, ForeignKey('movie.id'), primary_key=True)
+  movie = relationship("Movie", uselist=False)
   source_id = Column(Integer, ForeignKey('source.id'), primary_key=True)
+  source = relationship("Source", uselist=False)

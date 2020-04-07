@@ -128,11 +128,14 @@ export default class MoviesList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieList: []
+      movieList: [],
+      page: 1,
+      items: 4
     }
   }
 
-  componentDidMount(){
+  fetchMovieList = () => {
+    console.log('fetch ', this.state.page)
     try {
       fetch(
         "http://localhost:5000/api/v1/recommendations",
@@ -143,13 +146,21 @@ export default class MoviesList extends React.Component {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
-          },
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+            params: JSON.stringify({
+              "page": this.state.page,
+              "items": this.state.items
+            })
+          }
         }
       )
     } catch(e) {
       console.error()
     }
+  }
+
+  componentDidMount(){
+    this.fetchMovieList();
   }
 
   genMovie = movieTitle => {
@@ -162,6 +173,24 @@ export default class MoviesList extends React.Component {
     );
   }
 
+  onClickPrev = () => {
+    this.setState(prevState => {
+      prevState.page = prevState.page -= 1;
+      return {page: prevState.page}
+    });
+    this.fetchMovieList();
+  }
+
+  onClickNext = () => {
+    this.setState(prevState => {
+      prevState.page = prevState.page += 1;
+      console.log(prevState.page)
+      return {page: prevState.page}
+    })
+
+    return this.fetchMovieList();
+  }
+
   render() {
     return(
       <div className="movie-list">
@@ -172,12 +201,18 @@ export default class MoviesList extends React.Component {
           })}
         </ol>
         <div className="pagination">
-          <h5>prev</h5>
-          <div className="prev-arrow"></div>
-          <div className="rectangle"></div>
-          <h5>next</h5>
-          <div className="rectangle"></div>
-          <div className="next-arrow"></div>
+          {this.state.page > 1 &&
+            <div onClick={() => this.onClickPrev()}>
+              <h5>prev</h5>
+              <div className="prev-arrow"></div>
+              <div className="rectangle"></div>
+            </div>
+          }
+          <div onClick={() => this.onClickNext()}>
+            <h5>next</h5>
+            <div className="rectangle"></div>
+            <div className="next-arrow"></div>
+          </div>
         </div>
       </div>
     )
