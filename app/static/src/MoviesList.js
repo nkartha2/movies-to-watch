@@ -50,21 +50,17 @@ export default class MoviesList extends React.Component {
   }
 
   onClickPrev = () => {
-    this.setState(prevState => {
-      prevState.page = prevState.page -= 1;
+    this.setState((prevState => {
+      prevState.page -= 1;
       return {page: prevState.page}
-    });
-    this.fetchMovieList();
+    }), () => this.fetchMovieList());
   }
 
   onClickNext = () => {
-    this.setState(prevState => {
-      prevState.page = prevState.page += 1;
-      console.log(prevState.page)
+    this.setState((prevState => {
+      prevState.page += 1;
       return {page: prevState.page}
-    })
-
-    return this.fetchMovieList();
+    }), () => this.fetchMovieList())
   }
 
   render() {
