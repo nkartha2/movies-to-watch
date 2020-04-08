@@ -9,24 +9,24 @@ function ArtistList(props) {
     return (
       <li
         onClick={() => {
-          if(activeSource === artist.artistName) {
+          if(activeSource === artist.artist_name) {
             setActiveSource('')
           } else {
-            setActiveSource(artist.artistName)
+            setActiveSource(artist.artist_name)
           }
         }}
-        key={artist.artistName}
+        key={artist.artist_name}
       >
         <div className={`see-source-arrow ${activeSource === artist.artistName ? 'active' : ''}`}></div>
-        {artist.artistName}
-        {activeSource === artist.artistName &&
+        {artist.artist_name}
+        {activeSource === artist.artist_name &&
           <a
             className="active-source"
-            href={artist.cite}
+            href={artist.source_link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {artist.cite}
+            {artist.source_name}
           </a>
         }
       </li>
