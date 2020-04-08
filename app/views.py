@@ -8,7 +8,7 @@ recommendation_views = Blueprint("recommendation_views", __name__, url_prefix="/
 
 @recommendation_views.route("recommendations", methods=["GET"])
 def get_recommendations():
-  page = request.args.get('page', default=1, type=int)
+  page = request.args.get('page')
   items = request.args.get('items')
   print("PAGE ", page)
   print("ITEM ", items)

@@ -138,7 +138,7 @@ export default class MoviesList extends React.Component {
     console.log('fetch ', this.state.page)
     try {
       fetch(
-        "http://localhost:5000/api/v1/recommendations",
+        `http://localhost:5000/api/v1/recommendations?page=${this.state.page}&items=${this.state.items}`,
         {
           method: "GET",
           mode: 'cors',
@@ -146,11 +146,7 @@ export default class MoviesList extends React.Component {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-            params: JSON.stringify({
-              "page": this.state.page,
-              "items": this.state.items
-            })
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
           }
         }
       )
