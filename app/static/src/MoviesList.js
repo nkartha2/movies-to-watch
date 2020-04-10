@@ -9,12 +9,12 @@ export default class MoviesList extends React.Component {
     this.state = {
       movieList: [],
       page: 1,
-      items: 4
+      items: 4,
+      resultsLength: 0
     }
   }
 
   fetchMovieList = () => {
-    console.log('fetch ', this.state.page)
     try {
       fetch(
         `http://localhost:5000/api/v1/recommendations?page=${this.state.page}&items=${this.state.items}`,
@@ -29,7 +29,10 @@ export default class MoviesList extends React.Component {
           }
         }
       ).then(response => response.json()).then(json =>
-        this.setState({movieList: json})
+        this.setState({
+          movieList: json.movies,
+          resultsLength: json.results_length
+        })
       )
     } catch(e) {
       console.error()
@@ -42,10 +45,11 @@ export default class MoviesList extends React.Component {
 
   genMovie = movie => {
     return (
-        <li key={movie.title}>
-          <h3>{movie.title}</h3>
-          <ArtistList artists={movie.artists}/>
-        </li>
+      <li key={movie.title}>
+        <h2 className="ranking">{movie.ranking < 10 ? `0${movie.ranking}` : `${movie.ranking}`}</h2>
+        <h3>{movie.title}</h3>
+        <ArtistList artists={movie.artists}/>
+      </li>
     );
   }
 
@@ -80,11 +84,13 @@ export default class MoviesList extends React.Component {
               <div className="rectangle"></div>
             </div>
           }
-          <div onClick={() => this.onClickNext()}>
-            <h5>next</h5>
-            <div className="rectangle"></div>
-            <div className="next-arrow"></div>
-          </div>
+          {this.state.movieList && this.state.movieList[this.state.movieList.length - 1] && (this.state.movieList[this.state.movieList.length - 1].ranking !== this.state.resultsLength) &&
+            <div onClick={() => this.onClickNext()}>
+              <h5>next</h5>
+              <div className="rectangle"></div>
+              <div className="next-arrow"></div>
+            </div>
+          }
         </div>
       </div>
     )
