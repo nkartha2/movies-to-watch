@@ -70,7 +70,10 @@ export default class MoviesList extends React.Component {
   render() {
     return(
       <div className="movie-list">
-        <h1>Movies to Watch</h1>
+        <div className="tab-title">
+          <h1>The Shot List</h1>
+          <p>Filmmaker's Top Picks</p>
+        </div>
         <ol>
           {this.state.movieList.length > 0 && this.state.movieList.map(movie => {
             return this.genMovie(movie)

@@ -17,7 +17,7 @@ function ArtistList(props) {
         }}
         key={artist.artist_name}
       >
-        <div className={`see-source-arrow ${activeSource === artist.artistName ? 'active' : ''}`}></div>
+        <div className={`see-source-arrow ${activeSource === artist.artist_name ? 'active' : ''}`}></div>
         {artist.artist_name}
         {activeSource === artist.artist_name &&
           <a
