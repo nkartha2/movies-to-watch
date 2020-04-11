@@ -10,6 +10,7 @@
   min-height: 100vh;
   @include phone-screen {
     display: block;
+    width: auto;
   }
   .tab-title {
     transform: rotate(90deg);
@@ -21,15 +22,24 @@
     padding: 20px 25px 20px;
     font-weight: 700;
     letter-spacing: 2px;
+    @include phone-screen {
+      left: -50px;
+    }
     p {
       text-align: center;
       text-transform: uppercase;
+      @include phone-screen {
+        font-size: 14px;
+      }
     }
   }
   h1 {
     margin: 5px 0px 0px;
     font-size: 45px;
     text-transform: uppercase;
+    @include phone-screen {
+      font-size: 20px;
+    }
   }
   ol, ul {
     text-align: left;
@@ -47,6 +57,9 @@
       position: relative;
       top: 12px;
       margin-left: 5px;
+      @include phone-screen {
+        font-size: 12px;
+      }
     }
     > li {
       text-transform: uppercase;
@@ -63,6 +76,9 @@
         vertical-align: bottom;
         display: inline;
       }
+    }
+    @include phone-screen {
+      padding-left: 110px;
     }
   }
   ul {
@@ -124,9 +140,6 @@
       display: inline-block;
       margin: 10px;
     }
-    @include phone-screen {
-      position: relative;
-    }
     .rectangle {
       width: 20px;
       height: 2px;
@@ -150,6 +163,15 @@
       border-top: 3px solid transparent;
       border-right: 6px solid $colonelmustard;
       border-bottom: 3px solid transparent;
+    }
+    @include phone-screen {
+      width: 100%;
+      display: block;
+      position: static;
+      margin: 0px auto;
+      text-align: center;
+      right: 0px;
+      margin-left: 20px;
     }
   }
 }
