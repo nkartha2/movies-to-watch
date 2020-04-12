@@ -5,8 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 
 # Define WSGI app object
-app = Flask(__name__)
-
+app = Flask(__name__, static_folder='../build', static_url_path='/')
 
 engine = create_engine(DATABASE_URI)
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
