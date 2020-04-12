@@ -80,13 +80,13 @@ export default class MoviesList extends React.Component {
           })}
         </ol>
         <div className="pagination">
-          {/* {this.state.page > 1 && */}
+          {this.state.page > 1 &&
             <div onClick={() => this.onClickPrev()}>
               <h5>prev</h5>
               <div className="prev-arrow"></div>
               <div className="rectangle"></div>
             </div>
-          {/* } */}
+          }
           {this.state.movieList && this.state.movieList[this.state.movieList.length - 1] && (this.state.movieList[this.state.movieList.length - 1].ranking !== this.state.resultsLength) &&
             <div onClick={() => this.onClickNext()}>
               <h5>next</h5>
