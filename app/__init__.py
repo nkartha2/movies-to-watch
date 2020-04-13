@@ -12,11 +12,12 @@ DATABASE_URL = os.environ['DATABASE_URL']
 
 uri = DATABASE_URL or DATABASE_URI
 
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# conn = psycopg2.connect(host=DATABASE_URL, sslmode='require')
 
 engine = create_engine(DATABASE_URI)
 app.config["SQLALCHEMY_DATABASE_URI"] = uri
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
 # create db file using SQLAlchemy
 db.create_all()
