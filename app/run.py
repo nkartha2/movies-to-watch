@@ -14,6 +14,5 @@ app.register_blueprint(recommendation_views)
 def index():
     return app.send_static_file('index.html')
 
-# https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
 if __name__ == "__main__":
   app.run()
