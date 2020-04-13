@@ -5,7 +5,7 @@ from sqlalchemy import Table, Integer, String, Column, Boolean, DateTime, Foreig
 from sqlalchemy.orm import relationship
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
-from app import db
+from app.run import db
 
 # declarative base that registers model with SQA
 # new base class given metaclass that produces
