@@ -1,11 +1,10 @@
 from flask import Flask
-
 from flask_sqlalchemy import Model, SQLAlchemy
 from sqlalchemy import Table, Integer, String, Column, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
-from app.run import db
+from app import db
 
 # declarative base that registers model with SQA
 # new base class given metaclass that produces

@@ -1,6 +1,6 @@
 from flask import request, Blueprint, jsonify
 from app.models import Recommendation, Movie
-from app.run import db
+from app import db
 from sqlalchemy import func
 
 
