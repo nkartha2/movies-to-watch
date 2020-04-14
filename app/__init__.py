@@ -21,6 +21,6 @@ db = SQLAlchemy(app)
 # create db file using SQLAlchemy
 db.create_all()
 
-MIGRATION_DIR = os.path.basename('./app/migrations')
+# MIGRATION_DIR = os.path.basename('./app/migrations')
 
-migrate = Migrate(app, db, directory=MIGRATION_DIR)
+migrate = Migrate(app, db)
