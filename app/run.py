@@ -3,7 +3,6 @@ from flask_cors import CORS, cross_origin
 from app.models import *
 from app.views import recommendation_views
 
-
 # Define WSGI app object
 CORS(app)
 
