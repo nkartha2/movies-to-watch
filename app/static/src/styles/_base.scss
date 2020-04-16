@@ -1,8 +1,9 @@
 @import './consts';
 
 body {
-  background-color: #fbfbfb;
-  background: url('../images/collage3.jpg') repeat top center;
+  background: url('../images/collage.jpg') repeat top center fixed;
+  height: 100%;
+  overflow: hidden;
   @include phone-screen {
     background: none;
   }

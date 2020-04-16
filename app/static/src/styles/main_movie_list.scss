@@ -8,6 +8,7 @@
   position: relative;
   display: flex;
   min-height: 100vh;
+  position: relative;
   @include phone-screen {
     display: block;
     width: auto;
@@ -54,6 +55,9 @@
     list-style: none;
     padding-left: 165px;
     margin: 0px 0px 0px 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     h3 {
       display: inline-block;
       position: relative;
