@@ -10,7 +10,7 @@ application.register_blueprint(recommendation_views)
 
 @application.route('/')
 def index():
-    return application.send_static_file('../build/index.html')
+    return application.send_static_file('index.html')
 
 if __name__ == "__main__":
   application.run()
