@@ -17,7 +17,7 @@ export default class MoviesList extends React.Component {
   fetchMovieList = () => {
     try {
       fetch(
-        `http://localhost:5000/api/v1/recommendations?page=${this.state.page}&items=${this.state.items}`,
+        `https://the-shot-list-app.herokuapp.com/api/v1/recommendations?page=${this.state.page}&items=${this.state.items}`,
         {
           method: "GET",
           mode: 'cors',
