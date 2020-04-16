@@ -12,7 +12,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 engine = create_engine(DATABASE_URL)
 
 # Define WSGI app object
-app = Flask(__name__, static_url_path='', static_folder='static/build/')
+app = Flask(__name__, static_url_path='/app', static_folder='static/build/')
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = uri
 app.config.from_object(os.environ['APP_SETTINGS'])
