@@ -67,6 +67,7 @@
       position: relative;
       top: 12px;
       margin-left: 5px;
+      max-width: 155px;
       @include phone-screen {
         font-size: 12px;
       }
