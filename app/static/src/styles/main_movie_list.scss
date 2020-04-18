@@ -9,28 +9,30 @@
   display: flex;
   min-height: 100vh;
   position: relative;
+  border: 5px solid #000;
   @include phone-screen {
     display: block;
     width: auto;
+    padding: 0px 55px;
   }
   .tab-title {
-    text-align: center;
     transform: rotate(90deg);
     background-color: #000;
-    left: -111px;
-    top: 35%;
+    left: -120px;
+    top: 21%;
     color: #fff;
     position: absolute;
-    padding: 30px 25px 30px;
+    padding: 10px 25px;
     font-weight: 700;
     letter-spacing: 2px;
     @include phone-screen {
-      left: -50px;
+      transform: initial;
+      position: static;
     }
     p {
-      text-align: center;
       text-transform: uppercase;
       margin-top: 0px;
+      font-size: 18px;
       @include phone-screen {
         font-size: 14px;
       }
@@ -38,7 +40,7 @@
   }
   h1 {
     margin: 5px 0px 0px;
-    font-size: 45px;
+    font-size: 50px;
     text-transform: uppercase;
     @include phone-screen {
       font-size: 25px;
@@ -51,7 +53,6 @@
     list-style: none;
   }
   ol {
-    border-left: 1px solid #000;
     list-style: none;
     padding-left: 165px;
     margin: 0px 0px 0px 15px;
@@ -84,7 +85,9 @@
       }
     }
     @include phone-screen {
-      padding-left: 130px;
+      padding-left: 0px;
+      position: static;
+      transform: initial;
     }
   }
   ul {

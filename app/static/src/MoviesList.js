@@ -72,7 +72,7 @@ export default class MoviesList extends React.Component {
       <div className="movie-list">
         <div className="tab-title">
           <h1>The Shot List</h1>
-          <p>Filmmaker's Top Picks</p>
+          <p>Filmmakers' Top Picks</p>
         </div>
         <ol>
           {this.state.movieList.length > 0 && this.state.movieList.map(movie => {
