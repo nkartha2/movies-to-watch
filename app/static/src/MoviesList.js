@@ -70,9 +70,9 @@ export default class MoviesList extends React.Component {
   render() {
     return(
       <div className="movie-list">
-        <div className="tab-title">
+        <div className="tab-header">
           <h1>The Shot List</h1>
-          <p>Filmmakers' Top Picks</p>
+          <p>Film favorites of Filmmakers</p>
         </div>
         <ol>
           {this.state.movieList.length > 0 && this.state.movieList.map(movie => {
@@ -81,14 +81,20 @@ export default class MoviesList extends React.Component {
         </ol>
         <div className="pagination">
           {this.state.page > 1 &&
-            <div onClick={() => this.onClickPrev()}>
+            <div
+              className="prev"
+              onClick={() => this.onClickPrev()}
+            >
               <h5>prev</h5>
               <div className="prev-arrow"></div>
               <div className="rectangle"></div>
             </div>
           }
           {this.state.movieList && this.state.movieList[this.state.movieList.length - 1] && (this.state.movieList[this.state.movieList.length - 1].ranking !== this.state.resultsLength) &&
-            <div onClick={() => this.onClickNext()}>
+            <div
+              className="next"
+              onClick={() => this.onClickNext()}
+            >
               <h5>next</h5>
               <div className="rectangle"></div>
               <div className="next-arrow"></div>

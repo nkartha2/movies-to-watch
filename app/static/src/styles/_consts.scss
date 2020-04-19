@@ -6,14 +6,20 @@ $colonelmustard: #ECBE13;
   }
 }
 
+@mixin landscape-phone-screen {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
 @mixin tablet-portrait-screen {
-  @media (min-width: 600px) {
+  @media (max-width: 600px) {
     @content;
   }
 }
 
 @mixin tablet-landscape-screen {
-  @media (min-width: 900px) {
+  @media (max-width: 900px) {
     @content;
   }
 }
@@ -25,7 +31,7 @@ $colonelmustard: #ECBE13;
 }
 
 @mixin big-desktop-screen {
-  @media (min-width: 1400px) {
+  @media (min-width: 1300px) {
     @content;
   }
 }
